@@ -10,7 +10,7 @@ export const SignUp = () => <TouchableOpacity style = {styles.button}><Text>Sign
 
 const styles = StyleSheet.create({
     button: {
-        borderRadius: 100/2,
+        borderRadius: 50,
         padding: 10,
         backgroundColor: "#FFD700"
       }
