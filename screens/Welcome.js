@@ -1,15 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { SignIn } from '../components/welcomeComponents/SignIn';
-import { SignUp } from '../components/welcomeComponents/SignUp';
-import { WelcomeHeader } from '../components/welcomeComponents/WelcomeHeader';
-export const WelcomeScreen = () => {
+import { SignInButton } from '../components/Welcome/SignInButton';
+import { SignUpButton } from '../components/Welcome/SignUpButton';
+import { Header } from '../components/Welcome/Header';
+
+export const WelcomeScreen = (props) => {
   return (
     <View style={styles.container}>
-      <WelcomeHeader/>
+      <Header />
       <View style={styles.content}>
-        <SignIn/>
-        <SignUp/>
+        <SignInButton navigation={props.navigation} />
+        <SignUpButton navigation={props.navigation} />
       </View>
     </View>
   );

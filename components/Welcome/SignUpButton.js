@@ -1,18 +1,16 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
+export const SignUpButton = (props) => (
+  <TouchableOpacity onPress={() => props.navigation.navigate('SignUp')} style={styles.button}>
+    <Text>Sign Up</Text>
+  </TouchableOpacity>
+)
 
-
-
-
-
-export const SignIn = () => <TouchableOpacity style = {styles.button}><Text>Sign In</Text></TouchableOpacity>
-    
 const styles = StyleSheet.create({
-button: {
+  button: {
     borderRadius: 50,
     padding: 10,
-    marginBottom: 20,
     backgroundColor: "#FFD700"
   }
 });
