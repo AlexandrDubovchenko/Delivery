@@ -2,11 +2,16 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StyleSheet, Text } from 'react-native';
 
-export const SubmitButton = (props) => (
-    <TouchableOpacity style={styles.submit}>
-        <Text style={styles.submitButton}>{props.text}</Text>
-    </TouchableOpacity>
-)
+
+const SubmitButton = (props) => {
+    return (
+        <TouchableOpacity onPress={props.onSubmit} style={styles.submit}>
+            <Text style={styles.submitButton}>{props.text}</Text>
+        </TouchableOpacity>
+    )
+
+}
+
 
 const styles = StyleSheet.create({
     submit: {
@@ -26,3 +31,5 @@ const styles = StyleSheet.create({
         color: "#FFD700"
     },
 })
+
+export default SubmitButton

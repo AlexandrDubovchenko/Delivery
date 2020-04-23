@@ -1,54 +1,27 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet,} from 'react-native';
-import { WelcomeScreen } from './screens/Welcome';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { SignUpScreen } from './screens/SignUp';
-import * as eva from '@eva-design/eva';
-import { ApplicationProvider,} from '@ui-kitten/components';
-import { SignInScreen } from './screens/SignIn';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Main from './Main';
+import firebase from "firebase"
 
-
-const Stack = createStackNavigator();
+var firebaseConfig = {
+  apiKey: "AIzaSyBoDtZBrv3X5jTs0qVHm9V6FBvJ6uL1QDA",
+  authDomain: "hunterdelivery-b7269.firebaseapp.com",
+  databaseURL: "https://hunterdelivery-b7269.firebaseio.com",
+  projectId: "hunterdelivery-b7269",
+  storageBucket: "hunterdelivery-b7269.appspot.com",
+  messagingSenderId: "156249442079",
+  appId: "1:156249442079:web:3eab34f9ad20ab045f122a"
+};
+firebase.initializeApp(firebaseConfig)
 
 export default function App() {
+
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-       
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: "#006400",
-            height: 40
-          },
-          title: '',
-          headerLeft: null
-        }}
-      >
-        <Stack.Screen
-          name="WelcomeScreen"
-          component={WelcomeScreen}
-        />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUpScreen}
-        />
-           <Stack.Screen
-          name="SignIn"
-          component={SignInScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-    </ApplicationProvider>  
-  );
+    <Provider store={store}>
+      <Main />
+    </Provider>
+
+  )
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-  },
-})

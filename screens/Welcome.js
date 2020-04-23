@@ -4,7 +4,9 @@ import { SignInButton } from '../components/Welcome/SignInButton';
 import { SignUpButton } from '../components/Welcome/SignUpButton';
 import { Header } from '../components/Welcome/Header';
 
+
 export const WelcomeScreen = (props) => {
+
   return (
     <View style={styles.container}>
       <Header />

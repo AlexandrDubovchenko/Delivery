@@ -2,8 +2,11 @@ import React from 'react';
 import { Input } from '@ui-kitten/components';
 import { StyleSheet } from 'react-native';
 
-export const InputForm = (props) => {
-  const [value, setValue] = React.useState('');
+export const FormInput = (props) => {
+  const {
+    input: { value, onChange }
+  } = props
+  
   return (
     <Input
       style={styles.input}
@@ -11,7 +14,7 @@ export const InputForm = (props) => {
       placeholderTextColor="#FFD700"
       placeholder={props.placeholder}
       value={value}
-      onChangeText={nextValue => setValue(nextValue)}
+      onChangeText={onChange}
       secureTextEntry={props.password}
     />
   );

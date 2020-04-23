@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { ExitButton } from '../components/exitButton';
+import { ExitButton } from './ExitButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export const AuthHeader = (props) => {
