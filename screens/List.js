@@ -1,37 +1,40 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { connect } from 'react-redux';
-import { logOut } from '../redux/reducers/auth-reducer';
+import { StyleSheet, View, Text } from 'react-native';
 import { Footer } from '../components/Footer';
-import { ListItem } from '../components/List/ListItem';
-import  Header  from '../components/List/Header';
+import Header from '../components/List/Header';
+import { ListCustomItemShowcase } from '../components/List/ListUi';
 
 const ListScreen = (props) => {
   return (
     <View style={styles.container}>
       <Header />
-      <View style={styles.content}> 
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
+      <View style={styles.title}>
+        <Text style={styles.titleText}>Категории</Text>
+      </View>
+      <View style={styles.content}>
+        <ListCustomItemShowcase />
       </View>
       <Footer />
     </View>
-    
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
-   
   },
   content: {
-    flex: 7
+    flex: 12
+  },
+  titleText: {
+    fontSize: 30
+  },
+  title: {
+    flex: 1,
+    justifyContent: "center",
+    alignSelf: "center"
   }
 });
 
-export default connect(null, { logOut })(ListScreen)
+export default ListScreen

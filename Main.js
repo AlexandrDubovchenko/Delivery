@@ -14,29 +14,28 @@ const Stack = createStackNavigator();
 
 
 export const Main = () => {
-    console.log(store.getState());
-    
+
     if (store.getState().auth.isAuth) {
         return (
-                <ApplicationProvider {...eva} theme={eva.light}>
-                    <NavigationContainer>
-                        <Stack.Navigator
-                            screenOptions={{
-                                headerStyle: {
-                                    backgroundColor: "#006400",
-                                    height: 40
-                                },
-                                title: '',
-                                headerLeft: null
-                            }}
-                        >
-                            <Stack.Screen
-                                name="ListScreen"
-                                component={ListScreen}
-                            />
-                        </Stack.Navigator>
-                    </NavigationContainer>
-                </ApplicationProvider>
+            <ApplicationProvider {...eva} theme={eva.light}>
+                <NavigationContainer>
+                    <Stack.Navigator
+                        screenOptions={{
+                            headerStyle: {
+                                backgroundColor: "#006400",
+                                height: 40
+                            },
+                            title: '',
+                            headerLeft: null
+                        }}
+                    >
+                        <Stack.Screen
+                            name="ListScreen"
+                            component={ListScreen}
+                        />
+                    </Stack.Navigator>
+                </NavigationContainer>
+            </ApplicationProvider>
         )
     }
     return (

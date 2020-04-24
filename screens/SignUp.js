@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { SignUpForm } from '../components/Forms/SignUp';
+import SignUpForm from '../components/Forms/SignUp';
 import { AuthHeader } from '../components/AuthHeader';
 
 export const SignUpScreen = (props) => (

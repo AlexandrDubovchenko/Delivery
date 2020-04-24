@@ -21,18 +21,10 @@ const SignInForm = (props) => {
 
 const SignInReduxForm = reduxForm({form: 'signIn'})(SignInForm);
 
-
 const styles = StyleSheet.create({
     form: {
         flex: 2,
     },
 })
 
-
-const mapStateToProps = (state) => ({
-
-    authUserId: state.auth.isAuth
-})
-
-
-export default connect(mapStateToProps, { logIn })(SignInReduxForm)
+export default connect(null, { logIn })(SignInReduxForm)

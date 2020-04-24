@@ -13,8 +13,6 @@ const authReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_USER_DATA:
-            console.log('set');
-            
             return {
                 ...state,
                 ...action.data,
@@ -32,12 +30,20 @@ export const logOut = () => {
 
 export const logIn = (email, password) => {
     console.log('login');
-    
+
     return (dispatch) => {
         AuthApi.login(email, password).then(res => {
             dispatch(setAuthUserData(0, email, 0, true))
         }).catch(res => console.log('error'))
     }
+}
+
+export const signup = (email, password) => {
+    return (dispatch) => [
+        AuthApi.signUp(email, password).then(res => {
+            dispatch(setAuthUserData(0, email, 0, true))
+        }).catch(res => console.log('error'))
+    ]
 }
 export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, data: { id, email, login, isAuth } });
 

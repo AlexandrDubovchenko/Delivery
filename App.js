@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Main from './Main';
@@ -14,9 +14,12 @@ var firebaseConfig = {
   messagingSenderId: "156249442079",
   appId: "1:156249442079:web:3eab34f9ad20ab045f122a"
 };
-firebase.initializeApp(firebaseConfig)
 
 export default function App() {
+
+  useEffect(() => {
+    firebase.initializeApp(firebaseConfig)
+  }, [])
 
   return (
     <Provider store={store}>
