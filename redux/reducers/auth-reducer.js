@@ -6,7 +6,7 @@ const initialState = {
     id: null,
     email: null,
     login: null,
-    isAuth: true,
+    isAuth: false,
 }
 
 const authReducer = (state = initialState, action) => {
@@ -29,8 +29,6 @@ export const logOut = () => {
 }
 
 export const logIn = (email, password) => {
-    console.log('login');
-
     return (dispatch) => {
         AuthApi.login(email, password).then(res => {
             dispatch(setAuthUserData(0, email, 0, true))
@@ -39,11 +37,11 @@ export const logIn = (email, password) => {
 }
 
 export const signup = (email, password) => {
-    return (dispatch) => [
+    return (dispatch) => {
         AuthApi.signUp(email, password).then(res => {
             dispatch(setAuthUserData(0, email, 0, true))
-        }).catch(res => console.log('error'))
-    ]
+        }).catch(err => console.log(err))
+    }
 }
 export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, data: { id, email, login, isAuth } });
 

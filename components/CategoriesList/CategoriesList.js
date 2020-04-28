@@ -1,23 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
+import { connect } from 'react-redux';
+import { getListData } from '../../redux/reducers/list-reducer';
 
-const data = [
-    {
-        title: 'Pizza',
-        img: 'https://easydine.ru/wp-content/uploads/2015/10/meksikanskaya-pitsa.jpg'
-    },
-    {
-        title: 'Sushi',
-        img: 'https://photo.in.ck.ua/article/5d10/ccba/c101/0514/e002/f4fa/de-skushtuvaty-ta-zamovyty-sushi-v-cherkasah.12@2x.jpeg'
-    },
-    {
-        title: 'Burger',
-        img: 'https://chpt.ru/files/images/burger_1.png'
-    }
-]
+const CategoriesList = (props) => {
 
-export const ListCustomItemShowcase = () => {
+    const data = props.listItems
+    useEffect(() => {
+        props.getListData("categoriesList");
+        console.log(props.listItems);
+
+    }, [])
 
     const renderItemHeader = (headerProps, info) => (
         <View {...headerProps}>
@@ -32,7 +26,7 @@ export const ListCustomItemShowcase = () => {
         <Card
             style={styles.item}
             header={headerProps => renderItemHeader(headerProps, info)}
-            onPress={() => console.log('here')}
+            onPress={() => props.navigation.navigate("CategoryList", { title: info.item.title })}
         >
             <Image style={styles.categoryImage} source={{ uri: info.item.img }} />
         </Card>
@@ -61,3 +55,11 @@ const styles = StyleSheet.create({
         height: 200
     }
 });
+
+const mapStateToProps = (state) => {
+    return {
+        listItems: state.list.categoriesList
+    }
+}
+
+export default connect(mapStateToProps, { getListData })(CategoriesList)

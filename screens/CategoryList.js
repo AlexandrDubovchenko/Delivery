@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Footer } from '../components/Footer';
-import Header from '../components/List/Header';
-import { ListCustomItemShowcase } from '../components/List/ListUi';
+import Header from '../components/CategoriesList/Header';
+import CategoryList from '../components/CategoriesList/CategoryList/CategoryList';
 
-const ListScreen = (props) => {
+const CategoryListScreen = (props) => {
   return (
     <View style={styles.container}>
       <Header />
@@ -12,7 +12,7 @@ const ListScreen = (props) => {
         <Text style={styles.titleText}>Категории</Text>
       </View>
       <View style={styles.content}>
-        <ListCustomItemShowcase />
+        <CategoryList title={props.route.params.title}/>
       </View>
       <Footer />
     </View>
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ListScreen
+export default CategoryListScreen
