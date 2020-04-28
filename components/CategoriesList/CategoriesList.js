@@ -2,17 +2,14 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
 import { connect } from 'react-redux';
-import { getListData } from '../../redux/reducers/list-reducer';
+import { getCategoriestData } from '../../redux/reducers/list-reducer';
 
 const CategoriesList = (props) => {
 
     const data = props.listItems
     useEffect(() => {
-        props.getListData("categoriesList");
-        console.log(props.listItems);
-
+        props.getCategoriestData("categoriesList");
     }, [])
-
     const renderItemHeader = (headerProps, info) => (
         <View {...headerProps}>
             <Text category='h6'>
@@ -26,7 +23,7 @@ const CategoriesList = (props) => {
         <Card
             style={styles.item}
             header={headerProps => renderItemHeader(headerProps, info)}
-            onPress={() => props.navigation.navigate("CategoryList", { title: info.item.title })}
+            onPress={() => props.navigation.navigate("DishesScreen", { title: info.item.title })}
         >
             <Image style={styles.categoryImage} source={{ uri: info.item.img }} />
         </Card>
@@ -62,4 +59,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getListData })(CategoriesList)
+export default connect(mapStateToProps, { getCategoriestData })(CategoriesList)

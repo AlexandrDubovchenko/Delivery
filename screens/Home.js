@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Footer } from '../components/Footer';
-import Header from '../components/CategoriesList/Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import CategoriesList from '../components/CategoriesList/CategoriesList';
 
-const CategoriesListScreen = (props) => {
+const Home = (props) => {
   return (
     <View style={styles.container}>
       <Header />
@@ -14,7 +14,7 @@ const CategoriesListScreen = (props) => {
       <View style={styles.content}>
         <CategoriesList navigation={props.navigation} />
       </View>
-      <Footer />
+      <Footer navigation={props.navigation} />
     </View>
 
   );
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CategoriesListScreen
+export default Home

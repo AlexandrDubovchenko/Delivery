@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Footer } from '../components/Footer';
-import Header from '../components/CategoriesList/Header';
-import CategoryList from '../components/CategoriesList/CategoryList/CategoryList';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import CategoryList from '../components/DishesList/DishesList';
 
-const CategoryListScreen = (props) => {
+const DishesScreen = (props) => {
   return (
     <View style={styles.container}>
       <Header />
@@ -12,9 +12,9 @@ const CategoryListScreen = (props) => {
         <Text style={styles.titleText}>Категории</Text>
       </View>
       <View style={styles.content}>
-        <CategoryList title={props.route.params.title}/>
+        <CategoryList title={props.route.params.title} />
       </View>
-      <Footer />
+      <Footer navigation={props.navigation} />
     </View>
 
   );
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CategoryListScreen
+export default DishesScreen

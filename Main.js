@@ -8,12 +8,12 @@ import { ApplicationProvider, } from '@ui-kitten/components';
 import SignInScreen from './screens/SignIn';
 import { connect } from 'react-redux';
 import store from './redux/store';
-import CategoriesListScreen from './screens/CategoriesList';
-import CategoryListScreen from './screens/CategoryList'
-
+import Home from './screens/Home';
+import DishesScreen from './screens/Dishes'
+import ProfileScreen from './screens/Profile';
+import SearchScreen from './screens/Search';
 
 const Stack = createStackNavigator();
-
 
 export const Main = () => {
     if (store.getState().auth.isAuth) {
@@ -31,12 +31,20 @@ export const Main = () => {
                         }}
                     >
                         <Stack.Screen
-                            name="CategoriesScreen"
-                            component={CategoriesListScreen}
+                            name="HomeScreen"
+                            component={Home}
                         />
                         <Stack.Screen
-                            name="CategoryList"
-                            component={CategoryListScreen}
+                            name="DishesScreen"
+                            component={DishesScreen}
+                        />
+                        <Stack.Screen
+                            name="ProfileScreen"
+                            component={ProfileScreen}
+                        />
+                        <Stack.Screen
+                            name="SearchScreen"
+                            component={SearchScreen}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>

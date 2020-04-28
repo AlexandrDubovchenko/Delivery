@@ -11,8 +11,16 @@ export const AuthApi = {
 }
 
 export const ListApi = {
-  getList(listName) {
-    db = firebase.firestore();
-    return db.collection(listName).get()
+  getCategories() {
+    const db = firebase.firestore().collection('categoriesList');
+    return db.get()
+  },
+  getDishes(category) {
+    const db = firebase.firestore().collection('categoriesList').doc(category).collection('dishes');
+    return db.get()
+  },
+  getAllDishes() {
+    const db = firebase.firestore().collection('categoriesList')
+    return db.get()
   }
 }

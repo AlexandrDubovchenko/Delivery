@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View, Image, } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
 import { connect } from 'react-redux';
-import { getListData, resetCategoryListData } from '../../../redux/reducers/list-reducer';
+import { getDishesData, resetCategoryListData } from '../../redux/reducers/list-reducer';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const CategoryList = (props) => {
+const DishesList = (props) => {
     const data = props.listItems;
     useEffect(() => {
-        props.getListData(props.title.toLowerCase());
+        props.getDishesData(props.title.toLowerCase());
     }, []);
 
     useEffect(() => {
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
     return {
-        listItems: state.list.categoryList
+        listItems: state.list.dishes
     }
 }
 
-export default connect(mapStateToProps, { getListData, resetCategoryListData })(CategoryList)
+export default connect(mapStateToProps, { getDishesData, resetCategoryListData })(DishesList)
