@@ -32,7 +32,7 @@ export const logIn = (email, password) => {
     return (dispatch) => {
         AuthApi.login(email, password).then(res => {
             dispatch(setAuthUserData(0, email, 0, true))
-        }).catch(res => console.log('error'))
+        }).catch(err => console.log(err))
     }
 }
 

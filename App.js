@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Main from './Main';
 import firebase from "firebase"
-import { ListApi } from './api';
-
 
 var firebaseConfig = {
   apiKey: "AIzaSyDp4KgtVf8kuT69nDyVX4N_aMjnxChHzo0",
@@ -19,9 +17,7 @@ var firebaseConfig = {
 
 export default function App() {
 
-  useEffect(() => {
-    firebase.initializeApp(firebaseConfig)
-  }, [])
+  firebase.initializeApp(firebaseConfig)
 
   return (
     <Provider store={store}>
