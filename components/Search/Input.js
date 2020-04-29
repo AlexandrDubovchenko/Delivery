@@ -26,11 +26,7 @@ export const SearchInput = (props) => {
   useEffect(() => {
     props.getAllDishes()
   }, []);
-  useEffect(() => {
-    return () => {
-      props.resetFoundDishes()
-    }
-  }, [])
+
 
   const [value, setValue] = React.useState('');
 
@@ -40,9 +36,13 @@ export const SearchInput = (props) => {
         placeholder='Place your Text'
         value={value}
         onChangeText={nextValue => setValue(nextValue)}
-        onBlur={() => filter(value, dishes) ? filter(value, dishes).forEach(el =>
+        onBlur={() => value.length && (filter(value, dishes) ? filter(value, dishes).forEach(el =>
           props.findDishes(el.title.split(' ').join('_').toLowerCase(), el.category)
-        ) : setFound(false)}
+        ) : setFound(false))}
+        onFocus={()=>{
+          setFound(true); 
+          props.resetFoundDishes()
+        }}
       />
       {!found && <Text>По вашему запросу ничего не найдено</Text>}
     </>
