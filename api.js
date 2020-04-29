@@ -15,12 +15,12 @@ export const ListApi = {
     const db = firebase.firestore().collection('categoriesList');
     return db.get()
   },
-  getDishes(category) {
-    const db = firebase.firestore().collection('categoriesList').doc(category).collection('dishes');
+  getDishes(categoryName) {
+    const db = firebase.firestore().collection('categoriesList').doc(categoryName).collection('dishes');
     return db.get()
   },
-  getAllDishes() {
-    const db = firebase.firestore().collection('categoriesList')
+  findDishes(dishName, categoryName) {
+    const db = firebase.firestore().collection('categoriesList').doc(categoryName).collection('dishes').doc(dishName);
     return db.get()
   }
 }

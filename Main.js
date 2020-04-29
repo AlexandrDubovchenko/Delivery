@@ -12,48 +12,18 @@ import Home from './screens/Home';
 import DishesScreen from './screens/Dishes'
 import ProfileScreen from './screens/Profile';
 import SearchScreen from './screens/Search';
+import Footer from './components/Footer';
+import Header from './components/Header';
+
+
 
 const Stack = createStackNavigator();
 
-export const Main = () => {
-    if (store.getState().auth.isAuth) {
+export const Main = (props) => {
+    if (props.isAuth) {
         return (
-            <ApplicationProvider {...eva} theme={eva.light}>
-                <NavigationContainer>
-                    <Stack.Navigator
-                        screenOptions={{
-                            headerStyle: {
-                                backgroundColor: "#006400",
-                                height: 40
-                            },
-                            title: '',
-                            headerLeft: null
-                        }}
-                    >
-                        <Stack.Screen
-                            name="HomeScreen"
-                            component={Home}
-                        />
-                        <Stack.Screen
-                            name="DishesScreen"
-                            component={DishesScreen}
-                        />
-                        <Stack.Screen
-                            name="ProfileScreen"
-                            component={ProfileScreen}
-                        />
-                        <Stack.Screen
-                            name="SearchScreen"
-                            component={SearchScreen}
-                        />
-                    </Stack.Navigator>
-                </NavigationContainer>
-            </ApplicationProvider>
-        )
-    }
-    return (
-        <ApplicationProvider {...eva} theme={eva.light}>
-            <NavigationContainer>
+            <>
+                <Header />
                 <Stack.Navigator
                     screenOptions={{
                         headerStyle: {
@@ -61,24 +31,57 @@ export const Main = () => {
                             height: 40
                         },
                         title: '',
-                        headerLeft: null
+                        headerLeft: null,
+                        headerShown: false
                     }}
                 >
                     <Stack.Screen
-                        name="WelcomeScreen"
-                        component={WelcomeScreen}
+                        name="HomeScreen"
+                        component={Home}
                     />
                     <Stack.Screen
-                        name="SignUp"
-                        component={SignUpScreen}
+                        name="DishesScreen"
+                        component={DishesScreen}
                     />
                     <Stack.Screen
-                        name="SignIn"
-                        component={SignInScreen}
+                        name="ProfileScreen"
+                        component={ProfileScreen}
+                    />
+                    <Stack.Screen
+                        name="SearchScreen"
+                        component={SearchScreen}
                     />
                 </Stack.Navigator>
-            </NavigationContainer>
-        </ApplicationProvider>
+                <Footer />
+            </>
+        )
+    }
+    return (
+
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: "#006400",
+                    height: 40
+                },
+                title: '',
+                headerLeft: null
+            }}
+        >
+            <Stack.Screen
+                name="WelcomeScreen"
+                component={WelcomeScreen}
+            />
+            <Stack.Screen
+                name="SignUp"
+                component={SignUpScreen}
+            />
+            <Stack.Screen
+                name="SignIn"
+                component={SignInScreen}
+            />
+        </Stack.Navigator>
+
     );
 }
 

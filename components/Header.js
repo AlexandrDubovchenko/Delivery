@@ -8,11 +8,11 @@ const Header = (props) => {
     return (
         <View style={styles.header}>
             <TouchableOpacity onPress={props.logOut} >
-                <Image style={styles.logOutButton} source={require('../assets/log-out-outline.png')} />
+                <Image style={styles.logOutButton} source={require('../assets/Header/log-out-outline.png')} />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.basketButton}>
-                <Image style={styles.logOutButton} source={require('../assets/basket.png')} />
+                <Image style={styles.logOutButton} source={require('../assets/Header/basket.png')} />
             </TouchableOpacity>
         </View>
     )
@@ -20,7 +20,7 @@ const Header = (props) => {
 
 const styles = StyleSheet.create({
     header: {
-        flex: 1,
+        flex: 0.1,
         backgroundColor: "#FFD700",
         flexDirection: "row",
         justifyContent: "space-around",

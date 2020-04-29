@@ -2,12 +2,13 @@ import { AuthApi } from "../../api";
 
 const SET_USER_DATA = 'SET-USER-DATA';
 const SEND_ERROR_MESSAGE = 'SEND_ERROR_MESSAGE';
+const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE';
 
 const initialState = {
     id: null,
     email: null,
     login: null,
-    isAuth: false,
+    isAuth: true,
     error: null
 }
 
@@ -23,6 +24,11 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.error
+            }
+        case RESET_ERROR_MESSAGE:
+            return {
+                ...state,
+                error: null
             }
         default:
             return state;
@@ -52,5 +58,6 @@ export const signup = (email, password) => {
 }
 export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, data: { id, email, login, isAuth } });
 const sendErrorMessage = (error) => ({ type: SEND_ERROR_MESSAGE, error })
+export const resetErrorMessage = () => ({ type: RESET_ERROR_MESSAGE })
 
 export default authReducer;

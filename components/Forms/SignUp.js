@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import SubmitButton from './Controlers/SubmitButton'
 import { FormInput } from './Controlers/Input';
 import { connect } from 'react-redux';
-import { signup } from '../../redux/reducers/auth-reducer';
+import { signup , resetErrorMessage} from '../../redux/reducers/auth-reducer';
 import { reduxForm, Field } from 'redux-form';
 import { required} from '../../utilities/validation';
 
@@ -11,6 +11,12 @@ const SignUpForm = (props) => {
     const onSubmit = ({ email, password }) => {
         props.signup(email, password)
     }
+    useEffect(() => {
+        
+        return () => {
+            props.resetErrorMessage()
+        }
+    }, [])
     return (
         <View style={styles.form}>
             <Field placeholder='Email/Phone' name="email" component={FormInput} validate={[required]}/>
@@ -47,4 +53,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { signup })(SignUpReduxForm)
+export default connect(mapStateToProps, { signup, resetErrorMessage })(SignUpReduxForm)

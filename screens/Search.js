@@ -1,17 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import SearchInput from '../components/Search/SearchInput';
+import SearchInput from '../components/Search/Input';
+import FoundDishesList from '../components/Search/FoundDishesList';
 
 const SearchScreen = (props) => {
   return (
     <View style={styles.container}>
-      <Header />
+      <SearchInput />
       <View style={styles.content}>
-        <SearchInput />
+        <FoundDishesList />
       </View>
-      <Footer navigation={props.navigation} />
     </View>
 
   );
