@@ -7,7 +7,7 @@ const Footer = (props) => {
  
     return (
         <View style={styles.footer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => RootNavigation.navigate('HomeScreen')}>
                 <Image style={styles.footer_icon} source={require('../assets/Footer/list.png')} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => RootNavigation.navigate('SearchScreen')}>
