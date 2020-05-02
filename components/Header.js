@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { logOut } from '../redux/reducers/auth-reducer';
 import { connect } from 'react-redux';
+import * as RootNavigation from '../RootNavigation';
 
 const Header = (props) => {
+
     return (
         <View style={styles.header}>
             <TouchableOpacity onPress={props.logOut} >
                 <Image style={styles.logOutButton} source={require('../assets/Header/log-out-outline.png')} />
             </TouchableOpacity>
-
-            <TouchableOpacity style={styles.basketButton}>
-                <Image style={styles.logOutButton} source={require('../assets/Header/basket.png')} />
+            {!props.isBasket ?
+                <TouchableOpacity style={styles.basketButton} onPress={()=> RootNavigation.navigate('BasketScreen')}>
+                    <Image style={styles.logOutButton} source={require('../assets/Header/basket.png')} />
+                </TouchableOpacity> 
+                :
+                <TouchableOpacity style={styles.basketButton}>
+               <Text>Оформить заказ</Text>
             </TouchableOpacity>
+            }
+
         </View>
     )
 }
@@ -32,5 +40,7 @@ const styles = StyleSheet.create({
     }
 
 });
+
+
 
 export default connect(null, { logOut })(Header)

@@ -4,9 +4,12 @@ import { Card, List, Text } from '@ui-kitten/components';
 import { connect } from 'react-redux';
 import { getDishesData, resetCategoryListData } from '../../redux/reducers/list-reducer';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { setBasketItem } from '../../redux/reducers/basket-reducer';
 
 const DishesList = (props) => {
     const data = props.listItems;
+    console.log(props);
+    
     useEffect(() => {
         props.getDishesData(props.title.toLowerCase());
     }, []);
@@ -20,13 +23,13 @@ const DishesList = (props) => {
     const renderItemHeader = (headerProps, info) => (
         <View {...headerProps}>
             <Text category='h6'>
-                {info.item.title}
+                {info.item.name}
             </Text>
         </View>
     );
 
-    const renderItemFooter = (footerProps) => (
-        <TouchableOpacity style={styles.orderButton}>
+    const renderItemFooter = (footerProps ,info) => (
+        <TouchableOpacity style={styles.orderButton} onPress={()=>props.setBasketItem(info.item.name, info.item.img)}>
             <Text category='h6'>
                 Заказать
             </Text>
@@ -35,11 +38,11 @@ const DishesList = (props) => {
 
 
 
-    const renderItem = (info) => (
+    const renderItem = (info) => (        
         <Card
             style={styles.item}
             header={headerProps => renderItemHeader(headerProps, info)}
-            footer={renderItemFooter}
+            footer={footerProps => renderItemFooter(footerProps, info) }
         >
             <Image style={styles.categoryImage} source={{ uri: info.item.img }} />
         </Card>
@@ -79,4 +82,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getDishesData, resetCategoryListData })(DishesList)
+export default connect(mapStateToProps, { getDishesData, resetCategoryListData,  setBasketItem})(DishesList)

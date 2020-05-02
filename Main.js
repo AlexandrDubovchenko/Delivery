@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WelcomeScreen } from './screens/Welcome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,21 +14,26 @@ import ProfileScreen from './screens/Profile';
 import SearchScreen from './screens/Search';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { BasketScreen } from './screens/Basket';
 
 
 
 const Stack = createStackNavigator();
 
 export const Main = (props) => {
+    const [isBasket, toggleIsBasket] = useState(false); 
     if (props.isAuth) {
         return (
             <>
-                <Header />
+                <Header isBasket={isBasket}/>
                 <Stack.Navigator
                     screenOptions={{
                         headerStyle: {
                             backgroundColor: "#006400",
-                            height: 40
+                            height: 40,
+                            justifyContent: "flex-start",
+                        
+                            
                         },
                         title: '',
                         headerLeft: null,
@@ -50,6 +55,14 @@ export const Main = (props) => {
                     <Stack.Screen
                         name="SearchScreen"
                         component={SearchScreen}
+                    />
+                    <Stack.Screen
+                        name="BasketScreen"
+                        component={BasketScreen}
+                        options={
+                            ({navigation, route}) => route.params = {toggleIsBasket}}
+                        
+
                     />
                 </Stack.Navigator>
                 <Footer />

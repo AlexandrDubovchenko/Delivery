@@ -8,7 +8,7 @@ const initialState = {
     id: null,
     email: null,
     login: null,
-    isAuth: false,
+    isAuth: true,
     error: null
 }
 

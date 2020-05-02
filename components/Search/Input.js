@@ -10,7 +10,7 @@ const filter = (value, dishes) => {
   dishes.forEach((el) => {
     el.title.split(' ').forEach((dish) => {
       value.split(' ').forEach(valuePart => {
-        if (valuePart === dish) {
+        if (valuePart.toLowerCase() === dish.toLowerCase()) {
           matches.push({ title: el.title, category: el.category })
         }
       })

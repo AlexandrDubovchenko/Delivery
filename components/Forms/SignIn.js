@@ -13,7 +13,6 @@ const SignInForm = (props) => {
         props.logIn(email, password)
     }
     useEffect(() => {
-        
         return () => {
             props.resetErrorMessage()
         }

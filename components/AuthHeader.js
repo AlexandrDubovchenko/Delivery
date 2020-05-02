@@ -8,7 +8,7 @@ export const AuthHeader = (props) => {
     return (
         <View style={styles.header}>
             <ExitButton navigation={props.navigation} />
-            <TouchableOpacity onPress={() => props.navigation.navigate(props.switch)}><Text style={[styles.button]}>{switchText}</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => props.navigation.replace(props.switch)}><Text style={[styles.button]}>{switchText}</Text></TouchableOpacity>
         </View>
     )
 }
