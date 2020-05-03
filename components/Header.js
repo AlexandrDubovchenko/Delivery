@@ -13,15 +13,18 @@ const Header = (props) => {
                 <Image style={styles.logOutButton} source={require('../assets/Header/log-out-outline.png')} />
             </TouchableOpacity>
             {!props.isBasket ?
-                <TouchableOpacity style={styles.basketButton} onPress={()=> RootNavigation.navigate('BasketScreen')}>
+                <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('BasketScreen')}>
                     <Image style={styles.logOutButton} source={require('../assets/Header/basket.png')} />
-                </TouchableOpacity> 
+                    {
+                        props.basketItemsNumber ?
+                            <Text>{props.basketItemsNumber}</Text> : null
+                    }
+                </TouchableOpacity>
                 :
                 <TouchableOpacity style={styles.basketButton}>
-               <Text>Оформить заказ</Text>
-            </TouchableOpacity>
+                    <Text>Оформить заказ</Text>
+                </TouchableOpacity>
             }
-
         </View>
     )
 }
@@ -37,10 +40,18 @@ const styles = StyleSheet.create({
     logOutButton: {
         height: 40,
         width: 40
+    },
+    basketButton: {
+        flexDirection: "row",
+        alignItems: "flex-end"
     }
 
 });
 
+const mapStateToProps = (state) => {
+    return {
+        basketItemsNumber: state.basket.basketList.length
+    }
+}
 
-
-export default connect(null, { logOut })(Header)
+export default connect(mapStateToProps, { logOut })(Header)

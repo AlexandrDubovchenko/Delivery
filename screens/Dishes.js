@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import CategoryList from '../components/DishesList/DishesList';
+import CategoryDishesList from '../components/DishesList/DishesList';
 
 const DishesScreen = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <CategoryList title={props.route.params.title} />
+        <CategoryDishesList title={props.route.params.title} />
       </View>
     </View>
 
