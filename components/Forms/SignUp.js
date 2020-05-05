@@ -48,7 +48,7 @@ const SignUpForm = ({
   );
 };
 
-const SignUpReduxForm = reduxForm({ form: 'signIn' })(SignUpForm);
+const SignUpReduxForm = reduxForm({ form: 'signUp' })(SignUpForm);
 
 const mapStateToProps = (state) => ({
   errorMessage: state.auth.error,
