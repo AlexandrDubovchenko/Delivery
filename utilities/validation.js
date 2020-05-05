@@ -1,7 +1,3 @@
-export const required = (value) => {
-    if (!value) {
-        return 'Field is required'
-    } else {
-        return
-    }
-}
+const required = (value) => !value && 'Field is required';
+
+export default required;

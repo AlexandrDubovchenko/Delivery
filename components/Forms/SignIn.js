@@ -1,55 +1,58 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import SubmitButton from './Controlers/SubmitButton'
-import { FormInput } from './Controlers/Input';
 import { connect } from 'react-redux';
-import { logIn, resetErrorMessage } from '../../redux/reducers/auth-reducer';
 import { reduxForm, Field } from 'redux-form';
-import { required } from '../../utilities/validation';
+import SubmitButton from './Controlers/SubmitButton';
+import FormInput from './Controlers/Input';
+import { logIn, resetErrorMessage } from '../../redux/reducers/auth-reducer';
+import required from '../../utilities/validation';
+
+const styles = StyleSheet.create({
+  form: {
+    flex: 2,
+  },
+  error: {
+    color: 'red',
+  },
+  errorContainer: {
+    alignSelf: 'center',
+  },
+});
 
 
-const SignInForm = (props) => {
-    const onSubmit = ({ email, password }) => {
-        props.logIn(email, password)
+const SignInForm = ({
+  // eslint-disable-next-line no-shadow
+  errorMessage, handleSubmit, text, logIn, resetErrorMessage,
+}) => {
+  const onSubmit = ({ email, password }) => {
+    logIn(email, password);
+  };
+  useEffect(() => (
+    () => {
+      resetErrorMessage();
     }
-    useEffect(() => {
-        return () => {
-            props.resetErrorMessage()
-        }
-    }, [])
-    return (
-        <View style={styles.form}>
-            <Field placeholder='Email/Phone' name="email" component={FormInput} validate={[required]}/>
-            <Field placeholder='Password' name="password" password={true} component={FormInput} validate={[required]}/>
-            <View style={styles.errorContainer}>
-                {props.errorMessage && <Text style={styles.error}>
-                    {props.errorMessage.message}
-                </Text>}
-            </View>
-            <SubmitButton onSubmit={props.handleSubmit(onSubmit)} text={props.text} />
+  ), []);
+  return (
+    <View style={styles.form}>
+      <Field placeholder="Email/Phone" name="email" component={FormInput} validate={[required]} />
+      <Field placeholder="Password" name="password" password component={FormInput} validate={[required]} />
+      <View style={styles.errorContainer}>
+        {errorMessage && (
+          <Text style={styles.error}>
+            {errorMessage.message}
+          </Text>
+        )}
+      </View>
+      <SubmitButton onSubmit={handleSubmit(onSubmit)} text={text} />
 
-        </View>
-    )
-}
+    </View>
+  );
+};
 
 const SignInReduxForm = reduxForm({ form: 'signIn' })(SignInForm);
 
-const styles = StyleSheet.create({
-    form: {
-        flex: 2,
-    },
-    error: {
-        color: 'red'
-    },
-    errorContainer: {
-        alignSelf: "center"
-    }
-})
 
-const mapStateToProps = (state) => {
-
-    return {
-        errorMessage: state.auth.error
-    }
-}
-export default connect(mapStateToProps, { logIn, resetErrorMessage })(SignInReduxForm)
+const mapStateToProps = (state) => ({
+  errorMessage: state.auth.error,
+});
+export default connect(mapStateToProps, { logIn, resetErrorMessage })(SignInReduxForm);
