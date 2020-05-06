@@ -5,7 +5,7 @@ import { setBasketItem } from '../../redux/reducers/basket-reducer';
 import DishesList from '../DishesList';
 
 
-const CategoryDishesList = ({
+export const CategoryDishesList = ({
   // eslint-disable-next-line no-shadow
   listItems, title, resetCategoryListData, getDishesData, setBasketItem,
 }) => {

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SignUpForm = ({
+export const SignUpForm = ({
   // eslint-disable-next-line no-shadow
   errorMessage, handleSubmit, text, signup, resetErrorMessage,
 }) => {

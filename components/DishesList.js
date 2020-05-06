@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const DishesList = ({ data, setBasketItem }) => {
+export const DishesList = ({ data, setBasketItem }) => {
   const renderItemHeader = (headerProps, info) => (
     <View {...headerProps}>
       <Text category="h6">
