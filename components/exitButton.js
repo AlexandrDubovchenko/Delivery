@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const ExitButton = (props) => (
+const ExitButton = (props) => (
   <TouchableOpacity onPress={() => props.navigation.navigate('WelcomeScreen')}>
     <Image
       style={styles.img}
