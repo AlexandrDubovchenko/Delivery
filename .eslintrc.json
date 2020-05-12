@@ -27,6 +27,8 @@
         "extensions": [".js", ".jsx"]}
         ],
         "linebreak-style": 0,
-		"react/prop-types": 0
+    "react/prop-types": 0,
+    "import/extensions": "off",
+    "import/no-unresolved": "off"
     }
 }
