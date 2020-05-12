@@ -267,54 +267,13 @@ exports[`screen should render without error 1`] = `
         </View>
       </View>
       <Text>
-        сумма заказа
+        Сумма заказа:
+        0
+        грн
       </Text>
-      <RNGestureHandlerButton
-        collapsable={false}
-        onGestureEvent={[Function]}
-        onGestureHandlerEvent={[Function]}
-        onGestureHandlerStateChange={[Function]}
-        onHandlerStateChange={[Function]}
-        rippleColor={0}
-        style={
-          Array [
-            Object {
-              "overflow": "hidden",
-            },
-            undefined,
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          style={
-            Object {
-              "alignItems": "center",
-              "alignSelf": "center",
-              "backgroundColor": "#006400",
-              "borderRadius": 20,
-              "fontSize": 10,
-              "height": 40,
-              "justifyContent": "center",
-              "marginTop": 100,
-              "opacity": 1,
-              "right": 12,
-              "width": 140,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#FFD700",
-                "fontSize": 20,
-              }
-            }
-          >
-            Отправить заказ
-          </Text>
-        </View>
-      </RNGestureHandlerButton>
+      <Text>
+        Вы ничего не заказали
+      </Text>
     </View>
   </View>
 </View>

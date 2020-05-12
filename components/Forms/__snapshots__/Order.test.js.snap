@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`YourReduxFormComponent renders correctly 1`] = `
+exports[`should renders correctly 1`] = `
 <View
   style={
     Object {
@@ -247,7 +247,9 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
       </View>
     </View>
     <Text>
-      сумма заказа
+      Сумма заказа:
+      100
+      грн
     </Text>
     <RNGestureHandlerButton
       collapsable={false}

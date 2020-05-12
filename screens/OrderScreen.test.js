@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 
 test('screen should render without error', () => {
 
-  const welcomeScreenTest = TestRenderer.create(
+  const orderScreenTest = TestRenderer.create(
     <ApplicationProvider {...eva} theme={eva.light}>
       <Provider store={store}>
         <Order />
@@ -16,6 +16,6 @@ test('screen should render without error', () => {
     </ApplicationProvider>
 
   );
-  expect(welcomeScreenTest.toJSON()).toMatchSnapshot();
+  expect(orderScreenTest.toJSON()).toMatchSnapshot();
 
 });
