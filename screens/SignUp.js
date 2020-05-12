@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+// eslint-disable-next-line import/no-named-as-default
 import SignUpForm from '../components/Forms/SignUp';
 import { AuthHeader } from '../components/AuthHeader';
 

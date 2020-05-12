@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screen should render without error 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFD700",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "color": "#006400",
+          "flex": 0.5,
+          "fontSize": 30,
+        }
+      }
+    >
+      Оформление заказа
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 2,
+        }
+      }
+    >
+      <View>
+        <View
+          style={Object {}}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F7F9FC",
+                  "borderColor": "#E4E9F2",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "minHeight": 40,
+                  "paddingHorizontal": 8,
+                  "paddingVertical": 7,
+                },
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              appearance="default"
+              editable={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              placeholder="Имя"
+              placeholderTextColor="#FFD700"
+              rejectResponderTermination={true}
+              size="medium"
+              status="basic"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "normal",
+                    "marginHorizontal": 8,
+                  },
+                  Object {
+                    "flexBasis": "auto",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                  null,
+                  Object {
+                    "color": "#FFD700",
+                  },
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value=""
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "marginTop": 4,
+                },
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View>
+        <View
+          style={Object {}}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F7F9FC",
+                  "borderColor": "#E4E9F2",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "minHeight": 40,
+                  "paddingHorizontal": 8,
+                  "paddingVertical": 7,
+                },
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              appearance="default"
+              editable={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              placeholder="Aдрес"
+              placeholderTextColor="#FFD700"
+              rejectResponderTermination={true}
+              size="medium"
+              status="basic"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "normal",
+                    "marginHorizontal": 8,
+                  },
+                  Object {
+                    "flexBasis": "auto",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                  null,
+                  Object {
+                    "color": "#FFD700",
+                  },
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value=""
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "marginTop": 4,
+                },
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View>
+        <View
+          style={Object {}}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#F7F9FC",
+                  "borderColor": "#E4E9F2",
+                  "borderRadius": 4,
+                  "borderWidth": 1,
+                  "minHeight": 40,
+                  "paddingHorizontal": 8,
+                  "paddingVertical": 7,
+                },
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "width": "100%",
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              appearance="default"
+              editable={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              placeholder="Телефон"
+              placeholderTextColor="#FFD700"
+              rejectResponderTermination={true}
+              size="medium"
+              status="basic"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "normal",
+                    "marginHorizontal": 8,
+                  },
+                  Object {
+                    "flexBasis": "auto",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                  null,
+                  Object {
+                    "color": "#FFD700",
+                  },
+                ]
+              }
+              underlineColorAndroid="transparent"
+              value=""
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "marginTop": 4,
+                },
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <Text>
+        сумма заказа
+      </Text>
+      <RNGestureHandlerButton
+        collapsable={false}
+        onGestureEvent={[Function]}
+        onGestureHandlerEvent={[Function]}
+        onGestureHandlerStateChange={[Function]}
+        onHandlerStateChange={[Function]}
+        rippleColor={0}
+        style={
+          Array [
+            Object {
+              "overflow": "hidden",
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "center",
+              "backgroundColor": "#006400",
+              "borderRadius": 20,
+              "fontSize": 10,
+              "height": 40,
+              "justifyContent": "center",
+              "marginTop": 100,
+              "opacity": 1,
+              "right": 12,
+              "width": 140,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#FFD700",
+                "fontSize": 20,
+              }
+            }
+          >
+            Отправить заказ
+          </Text>
+        </View>
+      </RNGestureHandlerButton>
+    </View>
+  </View>
+</View>
+`;

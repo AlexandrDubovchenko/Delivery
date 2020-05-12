@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import BasketList from '../components/Basket.js/BasketList';
+import BasketList from '../components/Basket/BasketList';
 
 const styles = StyleSheet.create({
   container: {

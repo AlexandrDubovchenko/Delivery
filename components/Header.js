@@ -44,7 +44,7 @@ const Header = ({ isBasket, basketItemsNumber, logOut }) => (
         </TouchableOpacity>
       )
       : (
-        <TouchableOpacity style={styles.basketButton}>
+        <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('OrderScreen')}>
           <Text>Оформить заказ</Text>
         </TouchableOpacity>
       )}
