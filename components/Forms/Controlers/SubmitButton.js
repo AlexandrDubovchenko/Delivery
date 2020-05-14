@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   submitButton: {
-    fontSize: 20,
+    fontSize: 17,
     color: '#FFD700',
   },
 });

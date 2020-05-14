@@ -5,7 +5,6 @@ import {
   StyleSheet, View, Text, Image,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { logOut } from '../redux/reducers/auth-reducer';
 import * as RootNavigation from '../RootNavigation';
 
 const styles = StyleSheet.create({
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  logOutButton: {
+  buttonImg: {
     height: 40,
     width: 40,
   },
@@ -28,15 +27,16 @@ const styles = StyleSheet.create({
 });
 
 // eslint-disable-next-line no-shadow
-const Header = ({ isBasket, basketItemsNumber, logOut }) => (
+const Header = ({ isBasket, basketItemsNumber }) => (
   <View style={styles.header}>
-    <TouchableOpacity onPress={logOut}>
-      <Image style={styles.logOutButton} source={require('../assets/Header/log-out-outline.png')} />
+    <TouchableOpacity onPress={() => RootNavigation.goBack()}>
+      <Image style={styles.buttonImg} source={require('../assets/Header/back.png')} />
     </TouchableOpacity>
+
     {!isBasket
       ? (
-        <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('BasketScreen')}>
-          <Image style={styles.logOutButton} source={require('../assets/Header/basket.png')} />
+        <TouchableOpacity onPress={() => RootNavigation.navigate('BasketScreen')}>
+          <Image style={styles.buttonImg} source={require('../assets/Header/basket.png')} />
           {
             basketItemsNumber
               ? <Text>{basketItemsNumber}</Text> : null
@@ -55,4 +55,4 @@ const mapStateToProps = (state) => ({
   basketItemsNumber: state.basket.basketList.length,
 });
 
-export default connect(mapStateToProps, { logOut })(Header);
+export default connect(mapStateToProps, null)(Header);
