@@ -15,7 +15,14 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
       }
     }
   >
-    <View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 15,
+          "marginVertical": 5,
+        }
+      }
+    >
       <View
         style={Object {}}
       >
@@ -92,7 +99,14 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
         />
       </View>
     </View>
-    <View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 15,
+          "marginVertical": 5,
+        }
+      }
+    >
       <View
         style={Object {}}
       >
@@ -215,7 +229,7 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
           style={
             Object {
               "color": "#FFD700",
-              "fontSize": 20,
+              "fontSize": 17,
             }
           }
         />
