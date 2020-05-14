@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import CategoryDishesList from '../components/DishesList/DishesList';
+import CategoriesList from '../components/DishesList/DishesList';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 const DishesScreen = ({ route }) => (
   <View style={styles.container}>
     <View style={styles.content}>
-      <CategoryDishesList title={route.params.title} />
+      <CategoriesList title={route.params.title} />
     </View>
   </View>
 

@@ -25,3 +25,10 @@ export const ListApi = {
     return db.get();
   },
 };
+
+export const orderAPI = {
+  sendOrder(orderData) {
+    const db = firebase.firestore().collection('ordersList');
+    db.doc(Date.now().toString()).set(orderData);
+  },
+};

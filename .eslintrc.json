@@ -21,11 +21,14 @@
     "plugins": [
         "react"
     ],
+    "ignorePatterns": ["*.config.js", "register-service-worker.js", "*.test.js ", "node_modules/"],
     "rules": {
         "react/jsx-filename-extension": [1, {
         "extensions": [".js", ".jsx"]}
         ],
         "linebreak-style": 0,
-		"react/prop-types": 0
+    "react/prop-types": 0,
+    "import/extensions": "off",
+    "import/no-unresolved": "off"
     }
 }

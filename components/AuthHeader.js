@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StyleSheet, View, Text } from 'react-native';
-import { ExitButton } from './ExitButton';
+import ExitButton from './ExitButton';
 
 const styles = StyleSheet.create({
   button: {

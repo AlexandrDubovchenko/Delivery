@@ -32,14 +32,22 @@ const DishesList = ({ data, setBasketItem }) => {
   );
 
   const renderItemFooter = (footerProps, info) => (
-    <TouchableOpacity
-      style={styles.orderButton}
-      onPress={() => setBasketItem(info.item.name, info.item.img)}
-    >
-      <Text category="h6">
-        Заказать
+    <View>
+      <Text>
+        Цена:
+        {info.item.price}
+        грн
       </Text>
-    </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.orderButton}
+        onPress={() => setBasketItem(info.item.name, info.item.img, info.item.price)}
+      >
+        <Text category="h6">
+          Заказать
+        </Text>
+      </TouchableOpacity>
+    </View>
+
   );
 
 
