@@ -6,6 +6,8 @@ import FoundDishesList from '../components/Search/FoundDishesList';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 15,
+    paddingHorizontal: 5,
   },
   content: {
     marginTop: 15,

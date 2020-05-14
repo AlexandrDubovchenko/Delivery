@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFD700',
   },
+  price: {
+    fontSize: 20,
+    marginBottom: 30,
+  },
 });
 
 const DishesList = ({ data, setBasketItem }) => {
@@ -33,8 +37,8 @@ const DishesList = ({ data, setBasketItem }) => {
   );
 
   const renderItemFooter = (footerProps, info) => (
-    <View>
-      <Text>
+    <View {...footerProps}>
+      <Text style={styles.price}>
         Цена:
         {info.item.price}
         грн
@@ -45,12 +49,12 @@ const DishesList = ({ data, setBasketItem }) => {
           setBasketItem(info.item.name, info.item.img, info.item.price);
           showMessage({
             message: `${info.item.name} добавлено в Корзину`,
-            type: 'success',
+            type: 'default',
             duration: 6000,
           });
         }}
       >
-        <Text category="h6">
+        <Text category="h5">
           Заказать
         </Text>
       </TouchableOpacity>

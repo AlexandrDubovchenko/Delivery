@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-shadow */
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
@@ -24,8 +25,10 @@ const CategoriesList = ({ listItems, navigation, getCategoriestData }) => {
   useEffect(() => {
     getCategoriestData('categoriesList');
   }, []);
+
+
   const renderItemHeader = (headerProps, info) => (
-    <View>
+    <View {...headerProps}>
       <Text category="h6">
         {info.item.title}
       </Text>
