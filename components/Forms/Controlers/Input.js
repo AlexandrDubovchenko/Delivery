@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
   errorInput: {
     borderColor: 'red',
   },
+  inputContainer: {
+    marginVertical: 5,
+    marginHorizontal: 15,
+  },
 });
 
 const FormInput = (props) => {
@@ -19,7 +23,7 @@ const FormInput = (props) => {
     input: { value, onChange },
   } = props;
   return (
-    <View>
+    <View style={styles.inputContainer}>
       <Input
         // eslint-disable-next-line no-sequences
         style={styles.input, hasError ? styles.errorInput : null}

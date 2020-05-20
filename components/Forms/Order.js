@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import SubmitButton from './Controlers/SubmitButton';
 import FormInput from './Controlers/Input';
-import required from '../../utilities/validation';
+import { required, telefoneNumber } from '../../utilities/validation';
 import { orderAPI } from '../../api';
 import { resetBasket } from '../../redux/reducers/basket-reducer';
 
@@ -13,11 +13,8 @@ const styles = StyleSheet.create({
   form: {
     flex: 2,
   },
-  error: {
-    color: 'red',
-  },
-  errorContainer: {
-    alignSelf: 'center',
+  totalPrice: {
+    marginHorizontal: 15,
   },
 });
 
@@ -34,10 +31,10 @@ export const OrderForm = ({
   };
   return (
     <View style={styles.form}>
-      <Field placeholder="Имя" name="name" component={FormInput} validate={[required]} />
-      <Field placeholder="Aдрес" name="address" component={FormInput} validate={[required]} />
-      <Field placeholder="Телефон" name="telefone" component={FormInput} validate={[required]} />
-      <Text>
+      <Field style={styles.formInput} placeholder="Имя" name="name" component={FormInput} validate={[required]} />
+      <Field style={styles.formInput} placeholder="Aдрес" name="address" component={FormInput} validate={[required]} />
+      <Field style={styles.formInput} placeholder="Телефон" name="telefone" component={FormInput} validate={[required, telefoneNumber]} />
+      <Text style={styles.totalPrice}>
         Сумма заказа:
         {totalPrice}
         грн
@@ -49,7 +46,7 @@ export const OrderForm = ({
   );
 };
 
-const OrderReduxForm = reduxForm({ form: 'signIn' })(OrderForm);
+const OrderReduxForm = reduxForm({ form: 'order' })(OrderForm);
 
 
 const mapStateToProps = (state) => ({

@@ -6,19 +6,22 @@ import OrderForm from '../components/Forms/Order';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFD700',
   },
-  text: {
+  titleText: {
     fontSize: 30,
+  },
+  title: {
+    flex: 1,
+    justifyContent: 'center',
     alignSelf: 'center',
-    color: '#006400',
-    flex: 0.5,
   },
 });
 
 const OrderScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>Оформление заказа</Text>
+    <View style={styles.title}>
+      <Text style={styles.titleText}>Оформление заказа</Text>
+    </View>
     <OrderForm navigation={navigation} />
   </View>
 );

@@ -11,23 +11,29 @@ exports[`screen should render without error 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#FFD700",
         "flex": 1,
       }
     }
   >
-    <Text
+    <View
       style={
         Object {
           "alignSelf": "center",
-          "color": "#006400",
-          "flex": 0.5,
-          "fontSize": 30,
+          "flex": 1,
+          "justifyContent": "center",
         }
       }
     >
-      Оформление заказа
-    </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 30,
+          }
+        }
+      >
+        Оформление заказа
+      </Text>
+    </View>
     <View
       style={
         Object {
@@ -35,7 +41,14 @@ exports[`screen should render without error 1`] = `
         }
       }
     >
-      <View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 15,
+            "marginVertical": 5,
+          }
+        }
+      >
         <View
           style={Object {}}
         >
@@ -112,7 +125,14 @@ exports[`screen should render without error 1`] = `
           />
         </View>
       </View>
-      <View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 15,
+            "marginVertical": 5,
+          }
+        }
+      >
         <View
           style={Object {}}
         >
@@ -189,7 +209,14 @@ exports[`screen should render without error 1`] = `
           />
         </View>
       </View>
-      <View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 15,
+            "marginVertical": 5,
+          }
+        }
+      >
         <View
           style={Object {}}
         >
@@ -266,7 +293,13 @@ exports[`screen should render without error 1`] = `
           />
         </View>
       </View>
-      <Text>
+      <Text
+        style={
+          Object {
+            "marginHorizontal": 15,
+          }
+        }
+      >
         Сумма заказа:
         0
         грн

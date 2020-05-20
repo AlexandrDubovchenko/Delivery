@@ -5,7 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 import SubmitButton from './Controlers/SubmitButton';
 import FormInput from './Controlers/Input';
 import { signup, resetErrorMessage } from '../../redux/reducers/auth-reducer';
-import required from '../../utilities/validation';
+import { required } from '../../utilities/validation';
 
 const styles = StyleSheet.create({
   form: {
