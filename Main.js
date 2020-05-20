@@ -14,16 +14,18 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import BasketScreen from './screens/Basket';
 import OrderScreen from './screens/Order';
+import MyOrdersScreen from './screens/MyOrders';
 
 
 const Stack = createStackNavigator();
 
 const Main = ({ isAuth }) => {
   const [isBasket, toggleIsBasket] = useState(false);
+  const [isOrder, toggleIsOrder] = useState(false);
   if (isAuth) {
     return (
       <>
-        <Header isBasket={isBasket} />
+        <Header isBasket={isBasket} isOrder={isOrder} />
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
@@ -55,6 +57,10 @@ const Main = ({ isAuth }) => {
             component={SearchScreen}
           />
           <Stack.Screen
+            name="MyOrdersScreen"
+            component={MyOrdersScreen}
+          />
+          <Stack.Screen
             name="BasketScreen"
             component={BasketScreen}
             options={
@@ -64,6 +70,9 @@ const Main = ({ isAuth }) => {
           <Stack.Screen
             name="OrderScreen"
             component={OrderScreen}
+            options={
+              ({ route }) => route.params = { toggleIsOrder }
+            }
           />
         </Stack.Navigator>
         <Footer />

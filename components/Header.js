@@ -27,13 +27,12 @@ const styles = StyleSheet.create({
 });
 
 // eslint-disable-next-line no-shadow
-const Header = ({ isBasket, basketItemsNumber }) => (
+const Header = ({ isBasket, basketItemsNumber, isOrder }) => (
   <View style={styles.header}>
     <TouchableOpacity onPress={() => RootNavigation.goBack()}>
       <Image style={styles.buttonImg} source={require('../assets/Header/back.png')} />
     </TouchableOpacity>
-
-    {!isBasket
+    { !isOrder && (!isBasket
       ? (
         <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('BasketScreen')}>
           <Image style={styles.buttonImg} source={require('../assets/Header/basket.png')} />
@@ -47,7 +46,7 @@ const Header = ({ isBasket, basketItemsNumber }) => (
         <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('OrderScreen')}>
           <Text>Оформить заказ</Text>
         </TouchableOpacity>
-      )}
+      ))}
   </View>
 );
 

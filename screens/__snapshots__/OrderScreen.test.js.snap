@@ -35,9 +35,10 @@ exports[`screen should render without error 1`] = `
       </Text>
     </View>
     <View
+      category={true}
       style={
         Object {
-          "flex": 2,
+          "flex": 3,
         }
       }
     >
@@ -296,7 +297,10 @@ exports[`screen should render without error 1`] = `
       <Text
         style={
           Object {
+            "fontSize": 20,
+            "marginBottom": 30,
             "marginHorizontal": 15,
+            "marginTop": 10,
           }
         }
       >
