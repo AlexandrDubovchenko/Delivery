@@ -7,9 +7,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 import { createStackNavigator } from '@react-navigation/stack';
+import FlashMessage from 'react-native-flash-message';
 import { navigationRef } from './RootNavigation';
 import Main from './Main';
 import store from './redux/store';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDp4KgtVf8kuT69nDyVX4N_aMjnxChHzo0',
@@ -44,6 +46,7 @@ export default function App() {
             />
           </Stack.Navigator>
         </NavigationContainer>
+        <FlashMessage position="top" />
       </ApplicationProvider>
     </Provider>
   );

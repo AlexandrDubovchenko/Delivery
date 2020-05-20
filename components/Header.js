@@ -35,7 +35,7 @@ const Header = ({ isBasket, basketItemsNumber }) => (
 
     {!isBasket
       ? (
-        <TouchableOpacity onPress={() => RootNavigation.navigate('BasketScreen')}>
+        <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('BasketScreen')}>
           <Image style={styles.buttonImg} source={require('../assets/Header/basket.png')} />
           {
             basketItemsNumber

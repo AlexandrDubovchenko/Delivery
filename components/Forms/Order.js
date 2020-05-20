@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
+import { showMessage } from 'react-native-flash-message';
 import SubmitButton from './Controlers/SubmitButton';
 import FormInput from './Controlers/Input';
 import { required, telefoneNumber } from '../../utilities/validation';
@@ -18,7 +19,6 @@ const styles = StyleSheet.create({
   },
 });
 
-
 export const OrderForm = ({
   handleSubmit, orderDishes, totalPrice, navigation, resetBasket,
 }) => {
@@ -27,6 +27,12 @@ export const OrderForm = ({
       name, address, telefone, totalPrice,
     });
     navigation.navigate('HomeScreen');
+    showMessage({
+      message: 'Ваш заказ отправлен, ожидайте звонка',
+      type: 'success',
+      duration: 9000,
+      position: 'center',
+    });
     resetBasket();
   };
   return (

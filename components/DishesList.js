@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { showMessage } from 'react-native-flash-message';
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -20,6 +21,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFD700',
   },
+  price: {
+    fontSize: 20,
+    marginBottom: 30,
+  },
 });
 
 const DishesList = ({ data, setBasketItem }) => {
@@ -32,17 +37,24 @@ const DishesList = ({ data, setBasketItem }) => {
   );
 
   const renderItemFooter = (footerProps, info) => (
-    <View>
-      <Text>
+    <View {...footerProps}>
+      <Text style={styles.price}>
         Цена:
         {info.item.price}
         грн
       </Text>
       <TouchableOpacity
         style={styles.orderButton}
-        onPress={() => setBasketItem(info.item.name, info.item.img, info.item.price)}
+        onPress={() => {
+          setBasketItem(info.item.name, info.item.img, info.item.price);
+          showMessage({
+            message: `${info.item.name} добавлено в Корзину`,
+            type: 'default',
+            duration: 6000,
+          });
+        }}
       >
-        <Text category="h6">
+        <Text category="h5">
           Заказать
         </Text>
       </TouchableOpacity>

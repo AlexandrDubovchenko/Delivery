@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
@@ -17,24 +18,33 @@ const styles = StyleSheet.create({
   categoryImage: {
     height: 200,
   },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 60,
+    alignItems: 'center',
+    paddingHorizontal: 24,
+  },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: 40,
+    height: 60,
     alignItems: 'center',
-
+    paddingHorizontal: 24,
   },
   footer_number: {
-    flex: 1,
+    flex: 0.5,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  footer_delete: {
-    flex: 1,
-    alignItems: 'flex-end',
+  footer_controlers: {
+    flex: 1.5,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
-  footer_number_controls: {
-    fontSize: 30,
+  footer_number_control: {
+    fontSize: 40,
   },
 
 });
@@ -42,36 +52,36 @@ const styles = StyleSheet.create({
 // eslint-disable-next-line no-shadow
 const BasketList = ({ listItems, changeItemNumber, removeBasketItem }) => {
   const data = listItems;
+
   const renderItemHeader = (headerProps, info) => (
-    <View>
+    <View style={styles.header}>
       <Text category="h6">
         {info.item.name}
       </Text>
+      <TouchableOpacity onPress={() => removeBasketItem(info.item.name)}>
+        <Text>Удалить</Text>
+      </TouchableOpacity>
     </View>
   );
 
   const renderItemFooter = (footerProps, info) => (
     <View style={styles.footer}>
       <View style={styles.footer_number}>
-        <Text>
-          Кол-во
-          {info.item.number}
-        </Text>
+        <Text>Кол-во:</Text>
+        <Text>{info.item.number}</Text>
+      </View>
+      <View style={styles.footer_controlers}>
         <TouchableOpacity onPress={() => changeItemNumber(info.item.name)}>
-          <Text style={styles.footer_number_controls}>+</Text>
+          <Text style={styles.footer_number_control}>+</Text>
         </TouchableOpacity>
         {info.item.number > 1
           && (
             <TouchableOpacity onPress={() => changeItemNumber(info.item.name, false)}>
-              <Text style={styles.footer_number_controls}>-</Text>
+              <Text style={styles.footer_number_control}>-</Text>
             </TouchableOpacity>
           )}
       </View>
-      <View style={styles.footer_delete}>
-        <TouchableOpacity onPress={() => removeBasketItem(info.item.name)}>
-          <Text>Delete</Text>
-        </TouchableOpacity>
-      </View>
+
     </View>
 
   );
