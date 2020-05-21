@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
 });
 
 // eslint-disable-next-line no-shadow
-const ButtonList = ({ logOut, resetBasket }) => (
+const ButtonList = ({ navigation, logOut, resetBasket }) => (
   <View style={styles.content}>
-    <TouchableOpacity style={styles.functions_item}>
+    <TouchableOpacity onPress={() => navigation.navigate('MyOrdersScreen')} style={styles.functions_item}>
       <Image style={styles.profile_icon} source={require('../../assets/Profile/basket.png')} />
-      <Text>Мои заказы</Text>
+      <Text>Мои Заказы</Text>
     </TouchableOpacity>
     <TouchableOpacity style={styles.functions_item}>
       <Image style={styles.profile_icon} source={require('../../assets/Profile/navigation.png')} />

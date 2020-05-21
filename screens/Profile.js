@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const ProfileScreen = () => (
+const ProfileScreen = ({ navigation }) => (
   <View style={styles.container}>
     <ProfileInfo />
-    <ButtonList />
+    <ButtonList navigation={navigation} />
   </View>
 );
 

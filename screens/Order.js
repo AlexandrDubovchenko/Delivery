@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import OrderForm from '../components/Forms/Order';
 
@@ -17,13 +17,21 @@ const styles = StyleSheet.create({
   },
 });
 
-const OrderScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <View style={styles.title}>
-      <Text style={styles.titleText}>Оформление заказа</Text>
-    </View>
-    <OrderForm navigation={navigation} />
-  </View>
-);
+const OrderScreen = ({ route, navigation }) => {
+  useEffect(() => {
+    route.params.toggleIsOrder(true);
+    return () => {
+      route.params.toggleIsOrder(false);
+    };
+  }, []);
 
+  return (
+    <View style={styles.container}>
+      <View style={styles.title}>
+        <Text style={styles.titleText}>Оформление заказа</Text>
+      </View>
+      <OrderForm navigation={navigation} />
+    </View>
+  );
+};
 export default OrderScreen;

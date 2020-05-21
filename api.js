@@ -31,4 +31,9 @@ export const orderAPI = {
     const db = firebase.firestore().collection('ordersList');
     db.doc(Date.now().toString()).set(orderData);
   },
+
+  getOrders(id) {
+    const db = firebase.firestore().collection('ordersList').where('id', '==', id).get();
+    return db;
+  },
 };

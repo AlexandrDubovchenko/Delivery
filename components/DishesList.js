@@ -2,8 +2,8 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { showMessage } from 'react-native-flash-message';
+import OrderButton from './Button';
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -43,9 +43,8 @@ const DishesList = ({ data, setBasketItem }) => {
         {info.item.price}
         грн
       </Text>
-      <TouchableOpacity
-        style={styles.orderButton}
-        onPress={() => {
+      <OrderButton
+        onSubmit={() => {
           setBasketItem(info.item.name, info.item.img, info.item.price);
           showMessage({
             message: `${info.item.name} добавлено в Корзину`,
@@ -53,11 +52,8 @@ const DishesList = ({ data, setBasketItem }) => {
             duration: 6000,
           });
         }}
-      >
-        <Text category="h5">
-          Заказать
-        </Text>
-      </TouchableOpacity>
+        text="Заказать"
+      />
     </View>
 
   );
