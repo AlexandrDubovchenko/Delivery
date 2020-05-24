@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 const WelcomeScreen = ({ navigation }) => (
   <View style={styles.container}>
     <Header />
-    <View style={styles.content}>
+    <View style={styles.content} accessibilityLabel="test">
       <SignInButton navigation={navigation} />
       <SignUpButton navigation={navigation} />
     </View>
