@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screen should render without error 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFD700",
+        "flex": 1,
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#006400",
+          "fontSize": 50,
+        }
+      }
+    >
+      Hunter Delivery
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#006400",
+          "fontSize": 20,
+        }
+      }
+    >
+      Welcome to the Hunter Delivery
+    </Text>
+  </View>
+  <View
+    accessibilityLabel="test"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#006400",
+        "flex": 0.5,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFD700",
+          "borderRadius": 50,
+          "marginBottom": 20,
+          "opacity": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <Text>
+        Sign In
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFD700",
+          "borderRadius": 50,
+          "opacity": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <Text>
+        Sign Up
+      </Text>
+    </View>
+  </View>
+</View>
+`;
