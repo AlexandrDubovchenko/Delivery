@@ -16,16 +16,16 @@ import BasketScreen from './screens/Basket';
 import OrderScreen from './screens/Order';
 import MyOrdersScreen from './screens/MyOrders';
 
-
 const Stack = createStackNavigator();
 
 const Main = ({ isAuth }) => {
+  const [isHome, toggleIsHome] = useState(false);
   const [isBasket, toggleIsBasket] = useState(false);
   const [isOrder, toggleIsOrder] = useState(false);
   if (isAuth) {
     return (
       <>
-        <Header isBasket={isBasket} isOrder={isOrder} />
+        <Header isHome={isHome} isBasket={isBasket} isOrder={isOrder} />
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
@@ -43,6 +43,9 @@ const Main = ({ isAuth }) => {
           <Stack.Screen
             name="HomeScreen"
             component={Home}
+            options={
+              ({ route }) => route.params = { toggleIsHome }
+            }
           />
           <Stack.Screen
             name="DishesScreen"

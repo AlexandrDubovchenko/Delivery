@@ -7,6 +7,7 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as RootNavigation from '../RootNavigation';
 
+
 const styles = StyleSheet.create({
   header: {
     flex: 0.1,
@@ -26,27 +27,37 @@ const styles = StyleSheet.create({
 
 });
 
-// eslint-disable-next-line no-shadow
-const Header = ({ isBasket, basketItemsNumber, isOrder }) => (
+
+const Header = ({
+  isBasket, basketItemsNumber, isOrder, isHome,
+}) => (
   <View style={styles.header}>
-    <TouchableOpacity onPress={() => RootNavigation.goBack()}>
-      <Image style={styles.buttonImg} source={require('../assets/Header/back.png')} />
-    </TouchableOpacity>
-    { !isOrder && (!isBasket
-      ? (
-        <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('BasketScreen')}>
-          <Image style={styles.buttonImg} source={require('../assets/Header/basket.png')} />
-          {
-            basketItemsNumber
-              ? <Text>{basketItemsNumber}</Text> : null
-          }
+    {
+      !isHome
+      && (
+        <TouchableOpacity onPress={() => RootNavigation.goBack()}>
+          <Image style={styles.buttonImg} source={require('../assets/Header/back.png')} />
         </TouchableOpacity>
       )
-      : (
-        <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('OrderScreen')}>
-          <Text>Оформить заказ</Text>
-        </TouchableOpacity>
-      ))}
+    }
+
+    {
+      !isOrder && (!isBasket
+        ? (
+          <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('BasketScreen')}>
+            <Image style={styles.buttonImg} source={require('../assets/Header/basket.png')} />
+            {
+              basketItemsNumber
+                ? <Text>{basketItemsNumber}</Text> : null
+            }
+          </TouchableOpacity>
+        )
+        : (
+          <TouchableOpacity style={styles.basketButton} onPress={() => RootNavigation.navigate('OrderScreen')}>
+            <Text>Оформить заказ</Text>
+          </TouchableOpacity>
+        ))
+    }
   </View>
 );
 
