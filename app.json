@@ -26,7 +26,12 @@
     },
     "android": {
       "package": "com.yourcompany.yourcompany",
-      "versionCode": 2
+      "versionCode": 2,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAsYLEfvtuPYI8oE5Bf6-4qXbvO7HphxIs"
+        }
+      }
     },
     "description": ""
   }

@@ -15,6 +15,7 @@ import Header from './components/Header';
 import BasketScreen from './screens/Basket';
 import OrderScreen from './screens/Order';
 import MyOrdersScreen from './screens/MyOrders';
+import MapScreen from './screens/Map';
 
 const Stack = createStackNavigator();
 
@@ -76,6 +77,10 @@ const Main = ({ isAuth }) => {
             options={
               ({ route }) => route.params = { toggleIsOrder }
             }
+          />
+          <Stack.Screen
+            name="MapScreen"
+            component={MapScreen}
           />
         </Stack.Navigator>
         <Footer />
