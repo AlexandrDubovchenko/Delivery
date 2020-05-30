@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const MapScreen = () => {
+const MapScreen = ({ route }) => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [coordinates, setLocation] = useState(null);
   useEffect(() => {
@@ -31,12 +31,33 @@ const MapScreen = () => {
     })();
   }, []);
 
+  useEffect(() => (
+    () => {
+      if (coordinates !== null) {
+        route.params.setAddress(`${coordinates.latitude} ${coordinates.longitude}`);
+      }
+    }
+  ));
+
   if (coordinates === null) {
     return <View />;
   }
 
   return (
-    <MapView style={styles.mapStyle} onPress={(e) => setLocation(e.nativeEvent.coordinate)}>
+    <MapView
+      style={styles.mapStyle}
+      camera={{
+        center: {
+          latitude: coordinates.latitude,
+          longitude: coordinates.longitude,
+        },
+        pitch: 0,
+        heading: 0,
+        altitude: 18,
+        zoom: 18,
+      }}
+      onPress={(e) => setLocation(e.nativeEvent.coordinate)}
+    >
       <Marker
         coordinate={coordinates}
         title="hi"
