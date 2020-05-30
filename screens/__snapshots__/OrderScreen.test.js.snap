@@ -103,7 +103,7 @@ exports[`screen should render without error 1`] = `
                   },
                   null,
                   Object {
-                    "color": "#FFD700",
+                    "color": "black",
                   },
                 ]
               }
@@ -188,7 +188,7 @@ exports[`screen should render without error 1`] = `
                     },
                     null,
                     Object {
-                      "color": "#FFD700",
+                      "color": "black",
                     },
                   ]
                 }
@@ -246,9 +246,19 @@ exports[`screen should render without error 1`] = `
                 }
               }
             >
-              <Text>
-                Карта
-              </Text>
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../assets/Orders/map_icon.jpeg",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+              />
             </View>
           </RNGestureHandlerButton>
         </View>
@@ -314,7 +324,7 @@ exports[`screen should render without error 1`] = `
                   },
                   null,
                   Object {
-                    "color": "#FFD700",
+                    "color": "black",
                   },
                 ]
               }
@@ -351,7 +361,16 @@ exports[`screen should render without error 1`] = `
         0
         грн
       </Text>
-      <Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+            "marginBottom": 30,
+            "marginHorizontal": 15,
+            "marginTop": 10,
+          }
+        }
+      >
         Вы ничего не заказали
       </Text>
     </View>

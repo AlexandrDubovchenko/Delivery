@@ -76,7 +76,7 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
                 },
                 null,
                 Object {
-                  "color": "#FFD700",
+                  "color": "black",
                 },
               ]
             }
@@ -161,7 +161,7 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
                 },
                 null,
                 Object {
-                  "color": "#FFD700",
+                  "color": "black",
                 },
               ]
             }
