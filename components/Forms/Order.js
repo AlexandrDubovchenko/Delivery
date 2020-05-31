@@ -26,15 +26,14 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   mapButton: {
-    backgroundColor: 'blue',
     flex: 1,
     position: 'absolute',
     right: 30,
-    top: 15,
+    top: 7,
   },
   mapIcon: {
     width: 30,
-    height: 30,
+    height: 40,
   },
 });
 
@@ -62,7 +61,7 @@ export const OrderForm = ({
         <Field placeholder="Aдрес" name="address" props={{ value: address }} component={FormInput} validate={[required]} />
         <View style={styles.mapButton}>
           <TouchableOpacity onPress={() => navigation.navigate('MapScreen', { setAddress })}>
-            <Image style={styles.mapIcon} source={require('../../assets/Orders/map_icon.jpeg')} />
+            <Image style={styles.mapIcon} source={require('../../assets/Orders/map_icon.png')} />
           </TouchableOpacity>
         </View>
       </View>

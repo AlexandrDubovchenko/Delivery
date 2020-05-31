@@ -214,11 +214,10 @@ exports[`screen should render without error 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "blue",
               "flex": 1,
               "position": "absolute",
               "right": 30,
-              "top": 15,
+              "top": 7,
             }
           }
         >
@@ -249,12 +248,12 @@ exports[`screen should render without error 1`] = `
               <Image
                 source={
                   Object {
-                    "testUri": "../../../assets/Orders/map_icon.jpeg",
+                    "testUri": "../../../assets/Orders/map_icon.png",
                   }
                 }
                 style={
                   Object {
-                    "height": 30,
+                    "height": 40,
                     "width": 30,
                   }
                 }

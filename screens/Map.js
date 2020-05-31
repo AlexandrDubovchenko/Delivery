@@ -32,7 +32,11 @@ const MapScreen = ({ route }) => {
   }, []);
 
   useEffect(() => (
-    route.params.setAddress(`${coordinates?.latitude} ${coordinates?.longitude}`)
+    () => {
+      if (coordinates !== null) {
+        route.params.setAddress(`${coordinates.latitude} ${coordinates.longitude}`);
+      }
+    }
   ));
 
   if (coordinates === null) {
@@ -56,8 +60,6 @@ const MapScreen = ({ route }) => {
     >
       <Marker
         coordinate={coordinates}
-        title="hi"
-        description="test"
       />
     </MapView>
   );
