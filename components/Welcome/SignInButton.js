@@ -1,12 +1,14 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '@ui-kitten/components';
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 50,
-    padding: 10,
-    marginBottom: 20,
+    alignItems: 'center',
     backgroundColor: '#FFD700',
+    marginHorizontal: 15,
+    marginVertical: 10,
+    padding: 10,
   },
 });
 
@@ -15,7 +17,7 @@ const SignInButton = (props) => (
     onPress={() => props.navigation.navigate('SignIn')}
     style={styles.button}
   >
-    <Text>Sign In</Text>
+    <Text category="h5">SignIn</Text>
   </TouchableOpacity>
 );
 

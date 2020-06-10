@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { useNavigationState } from '@react-navigation/native';
 import CategoriesList from '../components/CategoriesList/CategoriesList';
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

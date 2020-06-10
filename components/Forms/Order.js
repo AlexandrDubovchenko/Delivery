@@ -14,7 +14,6 @@ import { orderAPI } from '../../api';
 import { resetBasket } from '../../redux/reducers/basket-reducer';
 import OrderButton from '../Button';
 
-
 const styles = StyleSheet.create({
   form: {
     flex: 3,
@@ -53,6 +52,7 @@ export const OrderForm = ({
     navigation.navigate('HomeScreen');
     resetBasket();
   };
+
   const [address, setAddress] = useState('');
   return (
     <View category style={styles.form}>

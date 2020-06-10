@@ -4,20 +4,14 @@ import { StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   submit: {
-    marginTop: 100,
-    width: 140,
-    height: 40,
-    alignSelf: 'center',
-    justifyContent: 'center',
     alignItems: 'center',
-    right: 12,
-    fontSize: 10,
-    backgroundColor: '#006400',
-    borderRadius: 20,
+    backgroundColor: '#FFD700',
+    marginHorizontal: 50,
+    marginVertical: 50,
+    padding: 10,
   },
   submitButton: {
     fontSize: 17,
-    color: '#FFD700',
   },
 });
 

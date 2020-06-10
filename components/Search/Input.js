@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Text } from 'react-native';
 import { Input } from '@ui-kitten/components';
 import { connect } from 'react-redux';
-import { getAllDishes, findDishes, resetFoundDishes } from '../../redux/reducers/list-reducer';
+import { resetFoundDishes, setFoundDishes } from '../../redux/reducers/list-reducer';
 
 const filter = (value, dishes) => {
   const matches = [];
   dishes.forEach((el) => {
-    if (el.title.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
+    if (el.name.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
       matches.push(el);
     }
   });
@@ -17,11 +17,6 @@ const filter = (value, dishes) => {
 const SearchInput = (props) => {
   const [found, setFound] = useState(true);
   const { dishes } = props;
-  useEffect(() => {
-    props.getAllDishes();
-  }, []);
-
-
   const [value, setValue] = React.useState('');
 
   return (
@@ -32,7 +27,7 @@ const SearchInput = (props) => {
         onChangeText={(nextValue) => setValue(nextValue)}
         onBlur={() => value.length && (filter(value, dishes)
           ? filter(value, dishes).forEach((el) => props
-            .findDishes(el.title.split(' ').join('_').toLowerCase(), el.category)) : setFound(false))}
+            .setFoundDishes(el)) : setFound(false))}
         onFocus={() => {
           setFound(true);
           props.resetFoundDishes();
@@ -51,4 +46,4 @@ const mapStateToProps = (state) => (
 );
 
 export default connect(mapStateToProps,
-  { getAllDishes, resetFoundDishes, findDishes })(SearchInput);
+  { resetFoundDishes, setFoundDishes })(SearchInput);

@@ -1,6 +1,7 @@
 /* eslint-disable no-use-before-define */
 import { AuthApi } from '../../api';
 
+
 const SET_USER_DATA = 'SET-USER-DATA';
 const SEND_ERROR_MESSAGE = 'SEND_ERROR_MESSAGE';
 const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE';
@@ -43,8 +44,7 @@ export const logIn = (email, password) => (dispatch) => {
   AuthApi.login(email, password)
     .then((res) => {
       dispatch(setAuthUserData(res.user.uid, email, email, true));
-    })
-    .catch((err) => dispatch(sendErrorMessage(err)));
+    }).catch((err) => dispatch(sendErrorMessage(err)));
 };
 
 export const signup = (email, password) => (dispatch) => {

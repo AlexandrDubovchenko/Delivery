@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
 import { connect } from 'react-redux';
-import { getCategoriestData } from '../../redux/reducers/list-reducer';
+import { getCategoriestData, getAllDishes } from '../../redux/reducers/list-reducer';
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -20,10 +20,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const CategoriesList = ({ listItems, navigation, getCategoriestData }) => {
+const CategoriesList = ({
+  listItems, navigation, getCategoriestData, getAllDishes,
+}) => {
   const data = listItems;
   useEffect(() => {
     getCategoriestData('categoriesList');
+    getAllDishes();
   }, []);
 
 
@@ -60,4 +63,4 @@ const mapStateToProps = (state) => ({
   listItems: state.list.categoriesList,
 });
 
-export default connect(mapStateToProps, { getCategoriestData })(CategoriesList);
+export default connect(mapStateToProps, { getCategoriestData, getAllDishes })(CategoriesList);
