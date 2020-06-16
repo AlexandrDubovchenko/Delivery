@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 });
 
 const ExitButton = (props) => (
-  <TouchableOpacity onPress={() => props.navigation.navigate('WelcomeScreen')}>
+  <TouchableOpacity onPress={() => props.navigation.navigate('ProfileScreen')}>
     <Image
       style={styles.img}
       source={{ uri: 'https://cdn.iconscout.com/icon/free/png-256/close-150-458082.png' }}

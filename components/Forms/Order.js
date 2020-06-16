@@ -1,6 +1,10 @@
+/* eslint-disable global-require */
 /* eslint-disable no-shadow */
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, { useState } from 'react';
+import {
+  StyleSheet, View, Text, Image,
+} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { showMessage } from 'react-native-flash-message';
@@ -20,6 +24,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 30,
   },
+  mapButton: {
+    flex: 1,
+    position: 'absolute',
+    right: 30,
+    top: 7,
+  },
+  mapIcon: {
+    width: 30,
+    height: 40,
+  },
 });
 
 export const OrderForm = ({
@@ -38,10 +52,21 @@ export const OrderForm = ({
     navigation.navigate('HomeScreen');
     resetBasket();
   };
+
+  const [address, setAddress] = useState('');
   return (
     <View category style={styles.form}>
       <Field placeholder="Имя" name="name" component={FormInput} validate={[required]} />
-      <Field placeholder="Aдрес" name="address" component={FormInput} validate={[required]} />
+      <View>
+        <Field placeholder="Aдрес" name="address" props={{ value: address }} component={FormInput} validate={[required]} />
+        <View style={styles.mapButton}>
+          <TouchableOpacity onPress={() => navigation.navigate('MapScreen', { setAddress })}>
+            <Image style={styles.mapIcon} source={require('../../assets/Orders/map_icon.png')} />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+
       <Field placeholder="Телефон" name="telefone" component={FormInput} validate={[required, telefoneNumber]} />
       <Text style={styles.totalPrice}>
         Сумма заказа:
@@ -50,7 +75,7 @@ export const OrderForm = ({
       </Text>
       {orderDishes.length
         ? <OrderButton onSubmit={handleSubmit(onSubmit)} text="Отправить заказ" />
-        : <Text>Вы ничего не заказали</Text>}
+        : <Text style={styles.totalPrice}>Вы ничего не заказали</Text>}
     </View>
   );
 };

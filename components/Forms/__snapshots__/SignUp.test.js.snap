@@ -76,7 +76,7 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
                 },
                 null,
                 Object {
-                  "color": "#FFD700",
+                  "color": "black",
                 },
               ]
             }
@@ -161,7 +161,7 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
                 },
                 null,
                 Object {
-                  "color": "#FFD700",
+                  "color": "black",
                 },
               ]
             }
@@ -212,23 +212,17 @@ exports[`YourReduxFormComponent renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "alignSelf": "center",
-            "backgroundColor": "#006400",
-            "borderRadius": 20,
-            "fontSize": 10,
-            "height": 40,
-            "justifyContent": "center",
-            "marginTop": 100,
+            "backgroundColor": "#FFD700",
+            "marginHorizontal": 50,
+            "marginVertical": 50,
             "opacity": 1,
-            "right": 12,
-            "width": 140,
+            "padding": 10,
           }
         }
       >
         <Text
           style={
             Object {
-              "color": "#FFD700",
               "fontSize": 17,
             }
           }

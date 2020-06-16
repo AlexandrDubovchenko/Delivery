@@ -1,30 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { getDishesData, resetCategoryListData } from '../../redux/reducers/list-reducer';
 import { setBasketItem } from '../../redux/reducers/basket-reducer';
 import DishesList from '../DishesList';
 
 
 export const CategoryDishesList = ({
   // eslint-disable-next-line no-shadow
-  listItems, title, resetCategoryListData, getDishesData, setBasketItem,
+  allDishes, title, setBasketItem,
 }) => {
-  useEffect(() => {
-    getDishesData(title.toLowerCase());
-  }, []);
-
-  useEffect(() => (
-    () => {
-      resetCategoryListData();
-    }
-  ), []);
-
+  const listItems = allDishes.filter((dish) => dish.category === title.toLowerCase());
   return <DishesList setBasketItem={setBasketItem} data={listItems} />;
 };
 
 const mapStateToProps = (state) => (
-  { listItems: state.list.dishes }
+  { allDishes: state.list.allDishes }
 );
 
 export default connect(mapStateToProps,
-  { getDishesData, resetCategoryListData, setBasketItem })(CategoryDishesList);
+  { setBasketItem })(CategoryDishesList);

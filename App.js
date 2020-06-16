@@ -2,7 +2,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { Provider } from 'react-redux';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import { ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
@@ -21,12 +21,15 @@ const firebaseConfig = {
   storageBucket: 'hunterdelivery-3c508.appspot.com',
   messagingSenderId: '605617784884',
   appId: '1:605617784884:web:744ac129c8d8ef1d442261',
+  measurementId: 'G-CGVPKEDZ4N',
 };
+
+
 firebase.initializeApp(firebaseConfig);
+
 const Stack = createStackNavigator();
 export default function App() {
   return (
-
     <Provider store={store}>
       <ApplicationProvider {...eva} theme={eva.light}>
         <NavigationContainer ref={navigationRef}>

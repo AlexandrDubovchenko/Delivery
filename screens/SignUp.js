@@ -7,7 +7,7 @@ import { AuthHeader } from '../components/AuthHeader';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFD700',
+
   },
   text: {
     fontSize: 30,

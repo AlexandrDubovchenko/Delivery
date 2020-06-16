@@ -6,6 +6,7 @@ import {
 import ProfileInfo from '../components/Profile/Info';
 import ButtonList from '../components/Profile/ButtonList';
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -6,12 +6,11 @@ import { AuthHeader } from '../components/AuthHeader';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFD700',
   },
   text: {
     flex: 0.5,
     fontSize: 30,
-    color: '#006400',
+    color: '#FFD700',
     alignSelf: 'center',
   },
 });

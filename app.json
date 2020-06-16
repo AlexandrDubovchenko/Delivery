@@ -24,6 +24,29 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "package": "com.yourcompany.yourcompany",
+      "versionCode": 2,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAsYLEfvtuPYI8oE5Bf6-4qXbvO7HphxIs"
+        }
+      }
+    },
+    "web": {
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyDp4KgtVf8kuT69nDyVX4N_aMjnxChHzo0",
+          "authDomain": "hunterdelivery-3c508.firebaseapp.com",
+          "databaseURL": "https://hunterdelivery-3c508.firebaseio.com",
+          "projectId": "hunterdelivery-3c508",
+          "storageBucket": "hunterdelivery-3c508.appspot.com",
+          "messagingSenderId": "605617784884",
+          "appId": "1:605617784884:web:744ac129c8d8ef1d442261",
+          "measurementId": "G-CGVPKEDZ4N"
+        }
+      }
+    },
     "description": ""
   }
 }

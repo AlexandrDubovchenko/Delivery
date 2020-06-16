@@ -21,6 +21,7 @@
     "plugins": [
         "react"
     ],
+    "parser": "babel-eslint",
     "ignorePatterns": ["*.config.js", "register-service-worker.js", "*.test.js ", "node_modules/"],
     "rules": {
         "react/jsx-filename-extension": [1, {
